@@ -5,7 +5,7 @@ export default class BaseController extends Controller {
    * query查询拼接
    */
   get condition() {
-    const ignore = ['_id', 'placeId', 'areaId','isHandled'];
+    const ignore = ['_id', 'userId'];
     const exclude = ['page', 'size'];
     const obj = this.ctx.request.query;
     const query: any = {};
