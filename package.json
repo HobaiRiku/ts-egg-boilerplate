@@ -55,5 +55,6 @@
     "ts-node": "^5.0.0",
     "tslint": "^4.0.0"
   },
-  "author": "HobaiRiku<me@hobairiku.site>"
+  "author": "HobaiRiku<me@hobairiku.site>",
+  "license": "MIT"
 }
