@@ -14,10 +14,11 @@ export default (app: Application) => {
   router.post('/api/users', controller.user.create);
   router.put('/api/users/:userId', controller.user.update);
   router.delete('/api/users/:userId', controller.user.destroy);
-  //SPA入口
-  router.get('*', (ctx: any) => {
+  //前端入口
+  router.get('*', async (ctx: any) => {
+    if (ctx.path.indexOf('api') !== -1) return ;
     const html = fs.readFileSync(
-      path.resolve(__dirname, '../frontend/dist/index.html'),
+      path.resolve(__dirname, '../frontend/index.html'),
       'utf-8',
     );
     ctx.status = 200;

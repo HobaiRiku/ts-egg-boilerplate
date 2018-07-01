@@ -44,7 +44,7 @@ export default function (appInfo: EggAppConfig) {
   };
   config.static = {
     prefix: '',
-    dir: path.join(appInfo.baseDir, 'frontend/dist'),
+    dir: path.join(appInfo.baseDir, 'frontend'),
     dynamic: true,
     preload: false,
     buffer: true,
