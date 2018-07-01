@@ -1,0 +1,59 @@
+{
+  "name": "ts-egg-boilerplate-mongoose",
+  "version": "0.0.1",
+  "description": "ts写egg+mongoose应用框架模版",
+  "scripts": {
+    "start": "egg-scripts start --port=9001 --daemon --title=my-ts-egg-mongoose-app",
+    "dev": "egg-bin dev -r 'egg-ts-helper/register'",
+    "tsc": "ets && tsc -p tsconfig.json",
+    "clean": "ets clean",
+    "stop": "egg-scripts stop --title=my-ts-egg-mongoose-app",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "tslint .",
+    "ci": "npm run lint && npm run cov",
+    "debug": "egg-bin debug"
+  },
+  "egg": {
+    "typescript": true
+  },
+  "dependencies": {
+    "egg": "^2.6.0",
+    "egg-cors": "^2.0.0",
+    "egg-mongoose": "^2.2.1",
+    "egg-scripts": "^2.0.0",
+    "egg-socket.io": "^4.0.8",
+    "jsonwebtoken": "^8.3.0",
+    "md5": "^2.2.1",
+    "moment": "^2.20.1",
+    "request": "^2.87.0",
+    "request-promise-any": "^1.0.5",
+    "source-map-support": "^0.5.0",
+    "tslib": "^1.8.1",
+    "typescript": "^2.8.0",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^7.2.6",
+    "@types/mongoose": "^5.0.15",
+    "@types/request": "^2.47.0",
+    "@types/socket.io": "^1.4.33",
+    "@types/mocha": "^2.2.40",
+    "@types/mockjs": "^1.0.0",
+    "@types/node": "^8.5.2",
+    "@types/power-assert": "^1.4.29",
+    "@types/supertest": "^2.0.0",
+    "@types/uuid": "^3.4.3",
+    "concurrently": "^3.5.1",
+    "egg-bin": "^4.3.7",
+    "egg-mock": "^3.15.0",
+    "egg-ts-helper": "^1.5.0",
+    "mocha": "^4.1.0",
+    "trash-cli": "^1.4.0",
+    "ts-loader": "^3.2.0",
+    "ts-node": "^5.0.0",
+    "tslint": "^4.0.0"
+  },
+  "author": "HobaiRiku<me@hobairiku.site>"
+}
