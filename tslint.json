@@ -9,6 +9,7 @@
     "adjacent-overload-signatures": true,
     "member-access": [false],
     "object-literal-key-quotes": [true, "as-needed"],
+    "only-arrow-functions":false,
     "member-ordering": [
       true,
       {
