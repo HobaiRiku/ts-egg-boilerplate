@@ -2,7 +2,7 @@
 
 目前使用egg以及mongoose编写restful服务端总结出的一个项目模板。
 
-适合喜欢用koa又喜欢别人搭好的轮子，然后又想用ts，最后还很矫情地只想用mongodb写restful应用服务的朋友。
+适合喜欢用koa又喜欢别人搭好的轮子，然后又想用ts，最后还只想用mongodb写restful应用服务的朋友。
 
 #### 其功能主要包含：
 
