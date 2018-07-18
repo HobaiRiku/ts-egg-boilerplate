@@ -7,10 +7,9 @@ export default (app: Application) => {
       type: 'worker',
     },
     async task() {
-      //do sometings
+      // do sometings
       app.test_schedule_run_count += 1;
-      app.logger.info('testSchedule run ' + app.test_schedule_run_count + ' time')
+      app.logger.info('testSchedule run ' + app.test_schedule_run_count + ' time');
     },
   };
 };
-

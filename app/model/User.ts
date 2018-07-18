@@ -39,7 +39,7 @@ export const userSchema: Schema = new Schema({
 });
 
 // egg-mongoose注入
-module.exports = (app: Application): Model<IUserModel> => {
+export default (app: Application): Model<IUserModel> => {
   const passwordSalt = app.config.keys;
   userSchema.methods.verifyPassword = function (password: string): boolean {
     return md5(passwordSalt + password) === this.password;

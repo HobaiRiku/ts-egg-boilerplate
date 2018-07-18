@@ -1,7 +1,7 @@
 import * as sourceMapSupport from 'source-map-support';
 
 sourceMapSupport.install();
-import {Application} from 'egg';
+import { Application } from 'egg';
 
 export default (app: Application) => {
   app.beforeStart(async function () {
