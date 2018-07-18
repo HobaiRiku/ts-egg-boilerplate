@@ -15,7 +15,7 @@ export default (app: Application) => {
       });
       firstAdmin.setPassword();
       await firstAdmin.save();
-      app.logger.info('project fist setup, init admin account ok!');
+      app.logger.info('project first setup, init admin account ok!');
     }
   });
   // 启动
