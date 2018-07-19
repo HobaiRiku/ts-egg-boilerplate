@@ -2,9 +2,7 @@ import * as mongoose from 'mongoose';
 import * as socket_io from 'socket.io';
 import {IUserModel} from '../../../app/model/User';
 declare module 'egg' {
-
-  import {ZXY_API} from "../app/core/ZXY_API";
-  import {IOperationModel} from "../app/model/Operation";
+;
 
   interface Application {
     mongoose: any;
