@@ -9,11 +9,11 @@ export default function (): DefaultConfig {
     },
     mongoose: {
       client: {
-        url: 'mongodb://127.0.0.1/db',
+        url: 'mongodb://127.0.0.1/test',
         options: {
-          auth: { authSource: 'db' },
-          user: 'bd-user',
-          pass: 'bd-user',
+          auth: { authSource: 'test' },
+          user: 'test-user',
+          pass: 'test-user',
         },
       },
     },
