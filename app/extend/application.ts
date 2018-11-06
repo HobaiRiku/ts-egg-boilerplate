@@ -1,7 +1,7 @@
 
 const TEST_SCHEDULE_RUN_COUNT = Symbol('Application#test_schedule_run_count');
 export default {
-  get test_schedule_run_count():number {
+  get test_schedule_run_count(): number {
     if (!this[TEST_SCHEDULE_RUN_COUNT]) {
       this[TEST_SCHEDULE_RUN_COUNT] = 0;
     }
@@ -12,5 +12,3 @@ export default {
   },
 
 };
-
-

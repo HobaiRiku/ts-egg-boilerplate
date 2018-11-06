@@ -1,6 +1,6 @@
 import {Application} from 'egg';
 import * as fs from 'fs';
-import * as path from 'path'
+import * as path from 'path';
 
 export default (app: Application) => {
   const {router, controller} = app;
@@ -14,11 +14,12 @@ export default (app: Application) => {
   router.post('/api/users', controller.user.create);
   router.put('/api/users/:userId', controller.user.update);
   router.delete('/api/users/:userId', controller.user.destroy);
-  //前端入口
+
+  // 前端入口
   router.get('*', async (ctx: any) => {
-    if (ctx.path.indexOf('api') !== -1) return ;
+    if (ctx.path.indexOf('api') !== -1) { return; }
     const html = fs.readFileSync(
-      path.resolve(__dirname, '../frontend/index.html'),
+      path.resolve(__dirname, '../ui/index.html'),
       'utf-8',
     );
     ctx.status = 200;
@@ -26,4 +27,3 @@ export default (app: Application) => {
   });
 
 };
-
