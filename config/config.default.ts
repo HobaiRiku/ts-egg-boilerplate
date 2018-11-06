@@ -1,37 +1,10 @@
-import { EggAppConfig, PowerPartial } from 'egg';
+'use strict';
+
+import {EggAppConfig, PowerPartial} from 'egg';
 import * as path from 'path';
 
-// business config
-export interface BizConfig {
-    local: {
-        msg: string;
-    };
-    uuid: {
-        name: string;
-        maxAge: number;
-    };
-    jwt: {
-        expires: number;
-        salt: string;
-    };
-}
-
-// default config
-export type DefaultConfig = PowerPartial<EggAppConfig & BizConfig>;
-
-export default function(appInfo: EggAppConfig) {
-    const config = {} as PowerPartial<EggAppConfig> & BizConfig;
-
-    config.keys = appInfo.name + '123123';
-    config.testScheduleInterval = '60s';
-    config.middleware = ['uuid'];
-    config.jwt = {
-        expires: 3600,
-        salt: '1234',
-    };
-    config.local = {
-        msg: 'local',
-    };
+export default function (appInfo: EggAppConfig) {
+    const config = {} as PowerPartial<EggAppConfig>;
 
     config.middleware = [
         'access',
@@ -59,14 +32,14 @@ export default function(appInfo: EggAppConfig) {
         maxAge: 60,
     };
     config.security = {
-        csrf: { enable: false },
-        methodnoallow: { enable: false },
+        csrf: {enable: false},
+        methodnoallow: {enable: false},
     };
     config.mongoose = {
         client: {
             url: 'mongodb://127.0.0.1/test',
             options: {
-                auth: { authSource: 'test' },
+                auth: {authSource: 'test'},
                 user: 'test-user',
                 pass: 'test-user',
             },
@@ -84,6 +57,24 @@ export default function(appInfo: EggAppConfig) {
     config.cors = {
         origin: () => '*',
     };
-
-    return config;
+    const bizConfig = {
+        uuid: {
+            name: 'ebuuid',
+            maxAge: 1000 * 60 * 60 * 24 * 365 * 10,
+        },
+        keys: appInfo.name + '123123',
+        testScheduleInterval: '60s',
+        middleware: ['uuid'],
+        jwt: {
+            expires: 3600,
+            salt: '1234',
+        },
+        local: {
+            msg: 'local',
+        },
+    };
+    return {
+        ...config,
+        ...bizConfig,
+    };
 }

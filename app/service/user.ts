@@ -1,8 +1,8 @@
-import BaseService from "../core/BaseService";
+import BaseService from '../core/BaseService';
 export default class UserService extends BaseService {
   public constructor(ctx) {
     super(ctx);
-    this.model = this.ctx.model.User
+    this.model = this.ctx.model.User;
   }
   /**
    * 创建一个用户
@@ -35,7 +35,7 @@ export default class UserService extends BaseService {
         result.data.message = '用户名已被占用';
         return result;
       }
-      const checkEmail = await ctx.model.User.findOne({ email: entity.email });
+      const checkEmail = await ctx.model.User.findOne({email: entity.email});
       if (checkEmail) {
         result.success = false;
         result.data.message = '邮箱已被占用';

@@ -10,9 +10,9 @@ export default class BaseController extends Controller {
     const obj = this.ctx.request.query;
     const query: any = {};
     for (const o in obj) {
-      if (obj[o] && obj[o] !== '' && !exclude.includes(o)) {
+      if (obj[o] && obj[o] !== '' && exclude.indexOf(o) === -1) {
         const rex = new RegExp(obj[o]);
-        query[o] = !ignore.includes(o) ? rex : obj[o];
+        query[o] = ignore.indexOf(o) === -1 ? rex : obj[o];
       }
     }
     return query;

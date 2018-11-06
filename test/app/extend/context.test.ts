@@ -2,13 +2,12 @@
 
 import { Context } from 'egg';
 import mm from 'egg-mock';
-import { app, assert } from 'egg-mock/bootstrap';
+import { app, assert } from '../../../node_modules/egg-mock/bootstrap';
 
 describe('test/app/extend/context.test.js', () => {
   afterEach(() => {
     mm.restore();
   });
-
   let ctx: Context;
   before(async () => {
     await app.ready();

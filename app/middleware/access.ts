@@ -1,4 +1,4 @@
-import { Context } from 'egg';
+import {Context} from 'egg';
 import * as path from 'path';
 import * as util from 'util';
 export default () => {

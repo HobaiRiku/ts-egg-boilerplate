@@ -1,6 +1,6 @@
-import { Context } from 'egg';
+import {Context} from 'egg';
 import * as jwt from 'jsonwebtoken';
-export default  () => {
+export default () => {
     return async (ctx: Context, next: any) => {
         let token;
         try {
@@ -19,7 +19,7 @@ export default  () => {
             }
             const salt = ctx.app.config.jwt.salt ? ctx.app.config.jwt.salt : '';
             const decode = jwt.verify(token, salt);
-            ctx.jwt = { type: 'verified', decode, token };
+            ctx.jwt = {type: 'verified', decode, token};
             await next();
         } catch (error) {
             if (

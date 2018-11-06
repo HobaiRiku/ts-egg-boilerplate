@@ -1,6 +1,6 @@
 import {Application} from 'egg';
 import * as md5 from 'md5';
-import {Document, Model, model, Schema} from 'mongoose';
+import {Document, Model, model, Schema} from 'mongoose'; // tslint:disable-line
 
 // 定义用户接口
 export interface IUser {
@@ -32,7 +32,7 @@ export const userSchema: Schema = new Schema({
   createdAt: {type: Date, default: Date.now},
   phone: {type: String, default: ''},
   isGlobalAdmin: {type: Boolean, default: false},
-  email: {type: String,default: ''},
+  email: {type: String, default: ''},
   username: {type: String, required: true},
   password: {type: String, required: true},
   jwtList: [{type: Number}],

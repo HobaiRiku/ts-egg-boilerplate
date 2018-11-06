@@ -2,8 +2,6 @@ import * as mongoose from 'mongoose';
 import * as socket_io from 'socket.io';
 import {IUserModel} from '../../../app/model/User';
 declare module 'egg' {
-;
-
   interface Application {
     mongoose: any;
     model: {

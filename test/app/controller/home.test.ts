@@ -1,7 +1,7 @@
 'use strict';
 
 import mm from 'egg-mock';
-import { app } from 'egg-mock/bootstrap';
+import {app} from 'egg-mock/bootstrap';
 
 describe('test/app/controller/home.test.js', () => {
   beforeEach(() => {

@@ -1,8 +1,8 @@
-import { Context, Service } from 'egg';
+import {Context, Service} from 'egg';
 import * as jwt from 'jsonwebtoken';
 import JwtPayload from '../core/JwtPayload';
 import ResError from '../core/ResError';
-import { IUserModel } from '../model/User';
+import {IUserModel} from '../model/User';
 export default class InternalService extends Service {
   constructor(ctx: Context) {
     super(ctx);
@@ -15,16 +15,16 @@ export default class InternalService extends Service {
   async login(account: string, password: string) {
     const ctx = this.ctx;
     try {
-      let condition: any = { username: account };
+      let condition: any = {username: account};
       if (/^1[3|4|5|8][0-9]\d{4,8}$/.test(account)) {
-        condition = { phone: account };
+        condition = {phone: account};
       }
       if (/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(account)) {
-        condition = { email: account };
+        condition = {email: account};
       }
       const userFind = await ctx.model.User.findOne(condition);
       if (!userFind || !userFind.jwtList) {
-        throw new ResError("user does not exit or error in token's list ", 202);
+        throw new ResError('user does not exit or error in token\'s list ', 202);
       }
       if (!userFind.verifyPassword(password)) {
         ctx.throw(new ResError('invalid account or password', 202));
@@ -43,7 +43,7 @@ export default class InternalService extends Service {
       if (!decode.iat) {throw new Error('error in decoding token: iat not found'); }
       userFind.jwtList = userFind.jwtList.concat([decode.iat]);
       await userFind.save();
-      return { message: 'login successful', token };
+      return {message: 'login successful', token};
     } catch (error) {
       ctx.throw(error);
     }
@@ -56,11 +56,11 @@ export default class InternalService extends Service {
     const ctx = this.ctx;
     try {
       const userNow = user;
-      if (!userNow || !userNow.jwtList) { throw new Error('user or jwtList not found'); }
+      if (!userNow || !userNow.jwtList) {throw new Error('user or jwtList not found'); }
       const index = userNow.jwtList.indexOf(ctx.jwt.decode.iat);
       userNow.jwtList.splice(index, 1);
       await userNow.save();
-      return { message: 'logout successful' };
+      return {message: 'logout successful'};
     } catch (error) {
       ctx.throw(error);
     }

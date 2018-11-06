@@ -1,15 +1,37 @@
 {
   "extends": "tslint:latest",
   "rules": {
-    "quotemark": [true, "single", "jsx-double"],
-    "no-console": [true, "dir", "log", "error", "warn"],
+    "quotemark": [
+      true,
+      "single",
+      "jsx-double"
+    ],
+    "no-console": [
+      true,
+      "dir",
+      "log",
+      "error",
+      "warn"
+    ],
     "space-before-function-paren": false,
-    "interface-name": [false, "never-prefix"],
-    "arrow-parens": [true, "ban-single-arg-parens"],
+    "interface-name": [
+      true,
+      "no-prefix"
+    ],
+    "arrow-parens": [
+      true,
+      "ban-single-arg-parens"
+    ],
     "adjacent-overload-signatures": true,
-    "member-access": [false],
-    "object-literal-key-quotes": [true, "as-needed"],
-    "only-arrow-functions":false,
+    "member-access": [
+      false
+    ],
+    "object-literal-key-quotes": [
+      true,
+      "as-needed"
+    ],
+    "no-submodule-imports": false,
+    "no-object-literal-type-assertion": false,
     "member-ordering": [
       true,
       {
@@ -17,9 +39,15 @@
       }
     ],
     "object-literal-sort-keys": false,
-    "max-classes-per-file": [true, 10],
+    "max-classes-per-file": [
+      true,
+      10
+    ],
     "max-line-length": false,
     "variable-name": false,
-    "align": [true, "statements"]
+    "align": [
+      true,
+      "statements"
+    ]
   }
 }

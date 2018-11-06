@@ -1,4 +1,4 @@
-import { Context } from 'egg';
+import {Context} from 'egg';
 import ResError from '../core/ResError';
 export default () => {
     return async (ctx: Context, next: any) => {

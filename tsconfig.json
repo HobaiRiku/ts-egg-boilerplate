@@ -7,9 +7,13 @@
     "noImplicitAny": false,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports": true,
     "charset": "utf8",
     "allowJs": false,
     "pretty": true,
+    "lib": [
+      "es6"
+    ],
     "noEmitOnError": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -19,7 +23,6 @@
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "inlineSourceMap": true,
-    "importHelpers": true
+    "inlineSourceMap": true
   }
 }
